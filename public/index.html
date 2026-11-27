@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Командная доска задач</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="masthead">
+        <h1>Командная доска задач</h1>
+      </header>
+      <main>
+        <section class="panel controls">
+          <h2>Добавить задачу</h2>
+          <form id="task-form">
+            <label for="title">Название задачи</label
+            ><input
+              id="title"
+              name="title"
+              minlength="4"
+              required
+              placeholder="Что необходимо выполнить?"
+            /><label for="category">Категория</label
+            ><select id="category" name="category">
+              <option>Организация</option>
+              <option>Техника</option>
+              <option>Логистика</option></select
+            ><label for="priority">Приоритет</label
+            ><select id="priority" name="priority">
+              <option>Низкий</option>
+              <option selected>Средний</option>
+              <option>Высокий</option>
+            </select>
+            <div class="actions">
+              <button id="submit-button" type="submit">Создать задачу</button
+              ><button id="refresh-button" class="secondary" type="button">
+                Обновить
+              </button>
+            </div>
+          </form>
+          <hr class="separator" />
+          <h3>Отбор задач</h3>
+          <label for="filter">Статус</label
+          ><select id="filter">
+            <option value="all">Все</option>
+            <option value="active">Активные</option>
+            <option value="done">Выполненные</option></select
+          ><label for="search">Поиск</label
+          ><input id="search" placeholder="Часть названия" />
+        </section>
+        <section class="panel content">
+          <h2>Задачи команды</h2>
+          <div id="status" class="status" role="status">
+            Подключение не выполнено.
+          </div>
+          <div id="summary" class="stats">Список не загружен</div>
+          <div id="task-list" class="list">
+            <div class="empty">Данные появятся после GET-запроса</div>
+          </div>
+        </section>
+      </main>
+      <footer class="page-foot"></footer>
+    </div>
+  </body>
+</html>
